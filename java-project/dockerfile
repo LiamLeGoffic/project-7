@@ -1,0 +1,11 @@
+
+# Utiliser une image Java de base
+FROM  openjdk:17-jdk-slim
+
+WORKDIR /app
+
+COPY src /app/src
+
+RUN javac src/Main.java -d /app/bin
+
+CMD ["java", "-cp", "/app/bin", "Main"]
